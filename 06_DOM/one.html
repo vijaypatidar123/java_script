@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     
+    <title>DOM Learning</title>
+    <style>
+        .bg_black{
+            background-color:black;
+            color: #fff;
+        } 
+    </style>
+</head>
+<body class="bg_black">
+    <div class="bg-black"></div>
+    <h1 id="title" class="heading">DOM Learning on Chai aur code <span style="display: none">test text</span> </h1>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.  </p>
+    <input type="password" name="" id="">
+
+    <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+    </ul>
+</body>
+</html>
+
+<!-- document.getElementById('title')
+<h1 id=​"title" class=​"heading">​DOM Learning on Chai aur code​</h1>​
+document.getElementById('title').getAttribute('id')
+'title'
+document.getElementById('title').getAttribute('class')
+'heading'
+document.getElementById('title').setAttribute('class','test')
+undefined
+document.getElementById('title').setAttribute('class','test heading')
+undefined -->
+
+<!-- 
+const title=document.getElementById('title')
+undefined
+title.style.backgroundColor='green'
+'green'
+title.style.padding='20px'
+'20px'
+title.style.borderRadius='25px'
+'25px'
+title.style.borderRadius='250px'
+
+'250px'
+title.style.borderRadius='25px'
+
+'25px'
+title
+<h1 id=​"title" class=​"heading" style=​"background-color:​ green;​ padding:​ 20px;​ border-radius:​ 25px;​">​DOM Learning on Chai aur code​</h1>​
+title.innerHTML
+'DOM Learning on Chai aur code'
+title.text
+undefined
+title.textContent
+'DOM Learning on Chai aur code'
+title.innerText
+'DOM Learning on Chai aur code' -->
+
+<!-- title
+<h1 id=​"title" class=​"heading">​…​</h1>​
+title.innerText
+'DOM Learning on Chai aur code'
+title.textContent
+'DOM Learning on Chai aur code test text '
+title.inner
+undefined
+title.innerHTML
+'DOM Learning on Chai aur code <span style="display: none">test text</span> ' -->
+
+<!-- document.querySelector('h2')
+// <h2>Lorem ipsum dolor sit.</h2>
+
+document.querySelector('#title')
+// <h1 id="title" class="heading">...</h1>
+
+document.querySelector('.heading')
+// <h1 id="title" class="heading">...</h1>
+
+document.querySelector('input[type="password"]')
+// <input type="password" name="" id="">
+
+document.querySelector('ul')
+<ul>​…​</ul>​
+const myul=document.querySelector('ul')
+undefined
+myul.querySelector('li')
+<li>​::marker​"one"</li>​
+const turngreen=myul.querySelector('li')
+undefined
+turngreen.style.background='green'
+'green'
+turngreen.style.padding='20px'
+'20px'
+turngreen.innerText
+'one'
+turngreen.innerText="five"
+'five'
+// null -->
+
+<!--
+const tempLiList=document.querySelectorAll('li')
+undefined
+tempLiList
+NodeList(3) [li, li, li]
+tempLiList.style.color='red'
+VM1658:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:23
+(anonymous) @ VM1658:1
+tempLiList[0].style.color='red'
+'red'
+-->
+
+<!--
+// Get elements by class name (returns an HTMLCollection)
+const tempClassList = document.getElementsByClassName('list-item');
+
+// Trying to use forEach directly on HTMLCollection will throw an error
+tempClassList.forEach(function (li) {
+  console.log(li);
+});
+// ❌ Uncaught TypeError: tempClassList.forEach is not a function
+
+// Convert HTMLCollection to an array
+const myConvertedArray = Array.from(tempClassList);
+
+// Now you can use forEach
+myConvertedArray.forEach(function (li) {
+  console.log(li);
+});
+
+myConvertedArray.forEach(function (li) {
+    li.style.color='orange'
+})
+-->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM| Edit and Remove Element</title>
+</head>
+<body style="background-color: #212121;color:#fff">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li=document.createElement('li');
+        li.innerHTML=`${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('Python')
+    addLanguage("TypeScript")
+    function addOptiLanguage(langName){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage("Golang")
+
+    // Edit Element
+    const secondlang=document.querySelector("Li:nth-child(2)")
+    // secondlang.innerHTML="Mojo"
+
+    const newli=document.createElement('li');
+    newli.textContent="Mojo";
+    secondlang.replaceWith(newli);
+
+    //Edit Element
+    const firstLang=document.querySelector("Li:first-child")
+    firstLang.outerHTML=`<li>Java</li>`
+
+    // Remove Element
+    const lastLang=document.querySelector("Li:last-child")
+    lastLang.remove();
+</script>
+</html>
