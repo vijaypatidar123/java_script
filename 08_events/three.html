@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script> 
+    let intervalId;
+    const startDate=function(){
+        const sayDate=function(){
+        console.log("Vijay Patidar",Date.now());   
+        }
+
+        intervalId=setInterval(sayDate,1000);
+    }
+    const stopDate=function(){
+        clearInterval(intervalId);
+    }
+    document.querySelector('#start').addEventListener('click',startDate);
+
+    document.querySelector('#stop').addEventListener('click', stopDate);
+</script>
+<!-- 
+<script> 
+        const sayDate = function(){
+            console.log("Vijay Patidar", Date.now());   
+        }
+
+        let intervalId; // variable to store interval ID
+
+        document.querySelector('#start').addEventListener('click', function(){
+            if (!intervalId) { // prevent multiple intervals
+                intervalId = setInterval(sayDate, 1000);
+            }
+        });
+
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearInterval(intervalId);
+            intervalId = null; // reset for future use
+        });
+    </script> -->
+</html>
